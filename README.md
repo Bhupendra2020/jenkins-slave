@@ -3,6 +3,13 @@ jenkins-slave
 
 This will create the jenkins slave which can be configured from jenkins master
 
+Pre-requisite
+-----
+
+If your host needs to allow connections from a jenkins instance hosted on a different machine, you will need to open up the TCP port. This can be achieved by editing the docker config file and setting (for example)
+
+    DOCKER_OPTS="-H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock"
+
 Usage
 -----
 
@@ -30,3 +37,5 @@ The second command shows the virtual IP address of the running container which w
 If the login is successful, you can also check that the correct version of Java is installed.
 
     java -version
+
+Congratulations, your Docker cloud is now ready!  The last step is to tell Jenkins to start using it.
