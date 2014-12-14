@@ -10,6 +10,12 @@ If your host needs to allow connections from a jenkins instance hosted on a diff
 
     DOCKER_OPTS="-H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock"
 
+The docker configuration file location will depend your system, but it is likely to be 
+    /etc/init/docker.conf, 
+    /etc/default/docker or 
+    /etc/default/docker.io
+    )    
+
 Usage
 -----
 
