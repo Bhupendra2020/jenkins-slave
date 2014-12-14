@@ -10,7 +10,7 @@ RUN apt-get update
 RUN apt-get install -y openssh-server
 
 #Install supervisor
-RUN apt-get install -y supervisor
+#RUN apt-get install -y supervisor
 
 #set sshd
 RUN sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd
@@ -21,8 +21,9 @@ RUN echo "root:password" | chpasswd
 RUN useradd jenkins  
 RUN echo "jenkins:jenkins" | chpasswd  
 
-RUN mkdir -p /var/run/supervisord  
-ADD supervisord.conf /etc/supervisord.conf  
+#RUN mkdir -p /var/run/supervisord  
+#ADD supervisord.conf /etc/supervisord.conf  
   
 EXPOSE 22  
-CMD ["/usr/bin/supervisord"]  
+#CMD ["/usr/bin/supervisord"]  
+CMD ["/usr/sbin/sshd", "-D"]
