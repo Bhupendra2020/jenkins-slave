@@ -21,11 +21,11 @@ Usage
 
 To create the image `fnubhupen/jenkins-slave`, execute the following command on the fnubhupen/jenkins-slave folder:
 
-    docker build -t fnubhupen/jenkins-slave .
+    docker build -t fnubhupen/jenkins-slave
 
 run the image and make sure it's working correctly.
 
-    docker run -t -i jenkins-slave 
+    docker run -t -i fnubhupen/jenkins-slave 
     
 You can see that the docker container is running using the "docker ps -a" command.
 
