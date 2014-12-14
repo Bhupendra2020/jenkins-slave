@@ -3,7 +3,7 @@ FROM fnubhupen/oraclejava:7
 MAINTAINER Bhupendra Kumar <Bhupendra.kumar@softcrylic.com>
 
 # Make sure the package repository is up to date.
-RUN echo "deb http://archive.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list
+#RUN echo "deb http://archive.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list
 RUN apt-get update
 
 # Install a basic SSH server
@@ -17,9 +17,9 @@ RUN sed -i 's|session    required     pam_loginuid.so|session    optional     pa
 RUN mkdir -p /var/run/sshd
 
 # Add user jenkins to the image
-RUN echo "root:password" | chpasswd  
+#RUN echo "root:password" | chpasswd  
 RUN useradd jenkins  
-RUN echo "jenkins:jenkins" | chpasswd  
+#RUN echo "jenkins:jenkins" | chpasswd  
 
 #RUN mkdir -p /var/run/supervisord  
 #ADD supervisord.conf /etc/supervisord.conf  
